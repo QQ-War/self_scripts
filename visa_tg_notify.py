@@ -26,7 +26,8 @@ def main():
         else:
             for chat in chats:
                 app.send_message(chat, 'maybe there is a chance')
-        print(f'running at {time.asctime( time.localtime(time.time()) )}')
+        with open('run.log', 'a+') as logfile:
+            print(f'running at {time.asctime( time.localtime(time.time()) )}', file=logfile)
         time.sleep(60)
     app.stop()
 
